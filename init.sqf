@@ -1,0 +1,1 @@
+[] execVM "MyZeusModule\functions\fn_initModule.sqf";
