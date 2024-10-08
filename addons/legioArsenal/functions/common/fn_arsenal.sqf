@@ -55,5 +55,5 @@ private _whitelist = [_filter] call LXII_legioArsenal_fnc_getArsenalFilter;
 	[_x, true] call ace_arsenal_fnc_removeBox;
 	[_x, [], true] call ace_arsenal_fnc_initBox;
 	[_x, _whitelist, true] call ace_arsenal_fnc_addVirtualItems;
-	[format["Added %1 filtered arsenal to %2", _filter, _x], "core\functions\common\fn_arsenal.sqf"] call LXII_legioArsenal_fnc_log;
+	[format["Added %1 filtered arsenal to %2", _filter, _x], "legioArsenal\functions\common\fn_arsenal.sqf"] call LXII_legioArsenal_fnc_log;
 } forEach _objects;

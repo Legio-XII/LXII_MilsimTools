@@ -2,7 +2,7 @@ params ["_vehicle", "_player", "_parameters"];
 
 private _actions = [];
 
-private _animations = [_vehicle] call lxii_legioArsenal_fnc_getDeployAnimations;
+private _animations = [_vehicle] call LXII_legioArsenal_fnc_getDeployAnimations;
 
 if (_animations isEqualTo []) exitWith {false;};
 
@@ -28,7 +28,7 @@ if (_animations isEqualTo []) exitWith {false;};
 						};
 
 						// _vehicle setVariable ["vs_core_%1_isActive", true];
-						[format["Animation data: %1 --- Variables: %2", _this, _animationClass], "legioArsenal\functions\common\fn_addDeployActions.sqf"] call lxii_legioArsenal_fnc_log;
+						[format["Animation data: %1 --- Variables: %2", _this, _animationClass], "legioArsenal\functions\common\fn_addDeployActions.sqf"] call LXII_legioArsenal_fnc_log;
 						_vehicle animateSource [_animationClass, _newPhase];
 					},
 					{},

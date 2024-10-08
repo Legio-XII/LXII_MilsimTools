@@ -32,7 +32,7 @@ class display3DEN
 				};
 				class LXII_legioArsenal_settings {
 					text = "Load LXII Settings";
-					action = "['Are you sure you want to overwrite current settings with VS defaults?', 'Load VS Settings', ['Overwrite', {[] call LXII_legioArsenal_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
+					action = "['Are you sure you want to overwrite current settings with LXII defaults?', 'Load LXII Settings', ['Overwrite', {[] call LXII_legioArsenal_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
 				};
 				class LXII_legioArsenal_assets {
 					text = "Load LXII Slots & Modules";
