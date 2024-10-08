@@ -2,8 +2,10 @@ class CfgPatches {
 	class LXII_CORE {
 		// Addon identity
 		name = "Legio XII - Core";
-		author = "Viking Studios";
-		authors[] = {"Qaiten"};
+		author = "Qaiten";
+		authors[] = {
+            "Qaiten"
+            };
 		url = "https://discord.me/legioxii";
 		version = 1.0;
 		versionAr[] = {1,0,0,0};

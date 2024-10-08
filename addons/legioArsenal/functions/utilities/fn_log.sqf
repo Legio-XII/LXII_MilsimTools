@@ -22,7 +22,7 @@ License GPL-2.0
 ---------------------------------------------------------------------------- */
 params [["_message", "No Message", []], ["_fileName", "N/A", []]];
 
-if (vs_core_debug) then {
+if (LXII_legioArsenal_debug) then {
 	if (_fileName isEqualTo "N/A") then {
 		systemChat (format["[Legio XII Debug] %1", _message]);
 		diag_log format["[Legio XII Debug] %1", _message];

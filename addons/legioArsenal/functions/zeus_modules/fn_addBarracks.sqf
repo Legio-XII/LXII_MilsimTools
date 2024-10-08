@@ -30,7 +30,7 @@ if (_objects isEqualType objNull) then {
 // Show Filter Dialog
 private _availableFilters = [
 	"",
-	"Kasrkin",
+	"kasrkin",
 	"mission"
 ];
 

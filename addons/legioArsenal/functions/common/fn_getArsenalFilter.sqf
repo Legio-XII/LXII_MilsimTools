@@ -1,6 +1,6 @@
 params [["_filter", "", [""]]];
 
-[format["Getting whitelists for filter %1", _filter], "core\functions\common\fn_getArsenalFilter.sqf"] call lxii_legioArsenal_fnc_log;
+[format["Getting whitelists for filter %1", _filter], "legioArsenal\functions\common\fn_getArsenalFilter.sqf"] call lxii_legioArsenal_fnc_log;
 private _whitelist = [];
 switch (toLowerANSI _filter) do {
 	case "mission": { _whitelist = parseSimpleArray lxii_legioArsenal_arsenal_whitelist_mission; };
