@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_forceRespawn
+Function: LXII_legioArsenal_fnc_forceRespawn
 
 Description:
 	Forces all the dead people to respawn immediately.
@@ -12,7 +12,7 @@ Returns:
 	Nothing
 
 Examples:
-	[] call LXII_tl_legioArsenal_fnc_forceRespawn;
+	[] call LXII_legioArsenal_fnc_forceRespawn;
 
 Author:
 	Ford
@@ -22,5 +22,5 @@ License GPL-2.0
 {
 	setPlayerRespawnTime 0;
 	sleep 2;
-	setPlayerRespawnTime LXII_tl_legioArsenal_respawn_timer;
+	setPlayerRespawnTime LXII_legioArsenal_respawn_timer;
 } remoteExec ["BIS_fnc_call", 0];

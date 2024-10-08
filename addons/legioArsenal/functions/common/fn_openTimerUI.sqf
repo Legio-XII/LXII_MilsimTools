@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_openTimerUI
+Function: LXII_legioArsenal_fnc_openTimerUI
 
 Description:
 	Opens the Timer UI to set respawn timer.
@@ -13,7 +13,7 @@ Returns:
 	True <BOOL>
 
 Examples:
-	[250] call LXII_tl_legioArsenal_fnc_openTimerUI;
+	[250] call LXII_legioArsenal_fnc_openTimerUI;
 
 Author:
 	mharis001
@@ -38,7 +38,7 @@ private _defaultConfirmAction = {
 	private _slider = ctrlParent _button displayCtrl 8505;
 	private _time = floor sliderPosition _slider;
 
-	[_time] call LXII_tl_legioArsenal_fnc_setRespawnTimer;
+	[_time] call LXII_legioArsenal_fnc_setRespawnTimer;
 	closeDialog 0;
 };
 

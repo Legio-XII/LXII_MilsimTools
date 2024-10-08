@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_getCurators
+Function: LXII_legioArsenal_fnc_getCurators
 
 Description:
 	Get a list of players with the curator/zeus power.
@@ -11,7 +11,7 @@ Returns:
 	Array of players with curator powers <ARRAY>
 
 Examples:
-	call LXII_tl_legioArsenal_fnc_getCurators;
+	call LXII_legioArsenal_fnc_getCurators;
 
 Author:
 	Arend

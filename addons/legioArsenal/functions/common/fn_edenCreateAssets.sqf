@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-	Function: LXII_tl_legioArsenal_fnc_edenCreateAssets
+	Function: LXII_legioArsenal_fnc_edenCreateAssets
 
 	Description:
 	Creates mission slots, modules and markers.
@@ -15,7 +15,7 @@
 	Nothing.
 
 	Examples:
-	["Odin", "Valhalla", "MTP", 3, false] call LXII_tl_legioArsenal_fnc_edenCreateAssets;
+	["Odin", "Valhalla", "MTP", 3, false] call LXII_legioArsenal_fnc_edenCreateAssets;
 
 	Author:
 	Met
@@ -94,8 +94,8 @@ _entities =
 		["ArsenalObject", true]
 	],
 	[
-		["Logic", "LXII_tl_legioArsenal_Barracks_Module", _spawnPos vectorAdd [-4, 7]],
-		["LXII_tl_legioArsenal_Barracks_Module_ArsenalFilter", "Kasrkin"],
+		["Logic", "LXII_legioArsenal_Barracks_Module", _spawnPos vectorAdd [-4, 7]],
+		["LXII_legioArsenal_Barracks_Module_ArsenalFilter", "Kasrkin"],
 		["ArsenalObject", true]
 	],
 	[
@@ -108,12 +108,12 @@ _entities =
 _sections =
 [
 	[
-		[configfile >> "CfgGroups" >> "West" >> "LXII_tl_legioArsenal_compositions" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
+		[configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
 		"Command",
 		["description", format ["1: 1IC@%1 1-Actual", _callsign ]]
 	],
 	[
-		[configfile >> "CfgGroups" >> "West" >> "LXII_tl_legioArsenal_compositions" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
+		[configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
 		"Zeus",
 		["description", format ["1: Zeus@%1", _zeusCallsign]]
 	]
@@ -136,7 +136,7 @@ _last = "";
 // The main sections
 _num = 1;
 for "_i" from 1 to _numberOfSections do {
-	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_tl_legioArsenal_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
+	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
 	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
 	_ix = 3;
@@ -196,12 +196,12 @@ for "_i" from 1 to _numberOfSections do {
 
 // default Loadouts
 if (_createDefaults) then {
-	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_tl_legioArsenal_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
-	set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "LXII_tl_legioArsenal_3den_Loadout", true]];
+	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
+	set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "LXII_legioArsenal_3den_Loadout", true]];
 	_groupComp = get3DENSelected "Object";
 	{
 		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
-		_x set3DENAttribute ["LXII_tl_legioArsenal_3den_LoadoutName", _unitDisplayName];
+		_x set3DENAttribute ["LXII_legioArsenal_3den_LoadoutName", _unitDisplayName];
 	} forEach _groupComp;
 	set3DENSelected [];
 };

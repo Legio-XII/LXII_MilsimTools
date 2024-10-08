@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_getDeadPlayers
+Function: LXII_legioArsenal_fnc_getDeadPlayers
 
 Description:
 	Create a list of dead players.
@@ -15,7 +15,7 @@ Returns:
 	3: Civilian
 
 Examples:
-	[] call LXII_tl_legioArsenal_fnc_getDeadPlayers;
+	[] call LXII_legioArsenal_fnc_getDeadPlayers;
 
 Author:
 	Arend
@@ -33,5 +33,5 @@ private _side = 0;
 	};
 } foreach ([] call CBA_fnc_players);
 
-[format["Got dead players %1", _deadPlayers], "legioArsenal\functions\common\fn_getDeadPlayers.sqf"] call LXII_tl_legioArsenal_fnc_log;
+[format["Got dead players %1", _deadPlayers], "legioArsenal\functions\common\fn_getDeadPlayers.sqf"] call LXII_legioArsenal_fnc_log;
 _deadPlayers;

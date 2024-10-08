@@ -24,19 +24,19 @@ class display3DEN
 			class Items
 			{
 				class Tools {
-					items[] += {"LXII_tl_legioArsenal_Tools"};
+					items[] += {"LXII_legioArsenal_Tools"};
 				};
-				class LXII_tl_legioArsenal_tools {
+				class LXII_legioArsenal_tools {
 					text = "LXII Tools...";
-					items[] = {"LXII_tl_legioArsenal_Settings", "LXII_tl_legioArsenal_Assets"};
+					items[] = {"LXII_legioArsenal_Settings", "LXII_legioArsenal_Assets"};
 				};
-				class LXII_tl_legioArsenal_settings {
+				class LXII_legioArsenal_settings {
 					text = "Load LXII Settings";
-					action = "['Are you sure you want to overwrite current settings with VS defaults?', 'Load VS Settings', ['Overwrite', {[] call LXII_tl_legioArsenal_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
+					action = "['Are you sure you want to overwrite current settings with VS defaults?', 'Load VS Settings', ['Overwrite', {[] call LXII_legioArsenal_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
 				};
-				class LXII_tl_legioArsenal_assets {
+				class LXII_legioArsenal_assets {
 					text = "Load LXII Slots & Modules";
-					action = "findDisplay 313 createDisplay 'LXII_tl_legioArsenal_edenGUI'";
+					action = "findDisplay 313 createDisplay 'LXII_legioArsenal_edenGUI'";
 				};
 			};
 		};
@@ -45,7 +45,7 @@ class display3DEN
 class CfgGroups
 {
 	class West {
-		class LXII_tl_legioArsenal_compositions {
+		class LXII_legioArsenal_compositions {
 			name = "LXII";
 			scope = 0;
 			class infantry {

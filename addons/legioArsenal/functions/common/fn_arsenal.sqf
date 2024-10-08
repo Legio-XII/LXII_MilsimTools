@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_Arsenal
+Function: LXII_legioArsenal_fnc_Arsenal
 
 Description:
 	Adds a custom ACE arsenal to the object in question. Object MUST be local
@@ -22,13 +22,13 @@ Returns:
 	Nothing
 
 Examples:
-	["WEST", [car_1,car_2]] call LXII_tl_legioArsenal_fnc_Arsenal;
+	["WEST", [car_1,car_2]] call LXII_legioArsenal_fnc_Arsenal;
 
-	["WEST", player] call LXII_tl_legioArsenal_fnc_Arsenal;
+	["WEST", player] call LXII_legioArsenal_fnc_Arsenal;
 
-	["WEST"] call LXII_tl_legioArsenal_fnc_Arsenal;
+	["WEST"] call LXII_legioArsenal_fnc_Arsenal;
 
-	[] call LXII_tl_legioArsenal_fnc_Arsenal;
+	[] call LXII_legioArsenal_fnc_Arsenal;
 
 Author:
 	Ford
@@ -38,7 +38,7 @@ License GPL-2.0
 params [["_filter", "", [""]], ["_objects", ObjNull, [objNull, []]]];
 
 if (_objects isEqualTo []) exitWith {
-	[format["Failed to apply %1 Arsenal: No object given! %2", _filter, _objects], "legioArsenal\functions\common\fn_arsenal.sqf"] call LXII_tl_legioArsenal_fnc_log;
+	[format["Failed to apply %1 Arsenal: No object given! %2", _filter, _objects], "legioArsenal\functions\common\fn_arsenal.sqf"] call LXII_legioArsenal_fnc_log;
 };
 
 if (_objects isEqualTo objNull) then {
@@ -49,11 +49,11 @@ if (typeName _objects != "ARRAY") then {
 	_objects = [_objects];
 };
 
-private _whitelist = [_filter] call LXII_tl_legioArsenal_fnc_getArsenalFilter;
+private _whitelist = [_filter] call LXII_legioArsenal_fnc_getArsenalFilter;
 
 {
 	[_x, true] call ace_arsenal_fnc_removeBox;
 	[_x, [], true] call ace_arsenal_fnc_initBox;
 	[_x, _whitelist, true] call ace_arsenal_fnc_addVirtualItems;
-	[format["Added %1 filtered arsenal to %2", _filter, _x], "core\functions\common\fn_arsenal.sqf"] call LXII_tl_legioArsenal_fnc_log;
+	[format["Added %1 filtered arsenal to %2", _filter, _x], "core\functions\common\fn_arsenal.sqf"] call LXII_legioArsenal_fnc_log;
 } forEach _objects;

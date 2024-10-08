@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_addTeleporter
+Function: LXII_legioArsenal_fnc_addTeleporter
 
 Description:
 	Adds a teleport action menu item which will teleport the player to the
@@ -15,9 +15,9 @@ Returns:
 	Nothing
 
 Examples:
-	[this, "Teleport to Airfield", airfield_east] call LXII_tl_legioArsenal_fnc_teleport;
+	[this, "Teleport to Airfield", airfield_east] call LXII_legioArsenal_fnc_teleport;
 
-	[this, "Teleport to Airfield", "rally_point_marker"] call LXII_tl_legioArsenal_fnc_teleport;
+	[this, "Teleport to Airfield", "rally_point_marker"] call LXII_legioArsenal_fnc_teleport;
 
 Author:
 	Arend

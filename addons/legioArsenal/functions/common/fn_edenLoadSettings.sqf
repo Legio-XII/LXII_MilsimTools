@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_edenLoadSettings
+Function: LXII_legioArsenal_fnc_edenLoadSettings
 
 Description:
 	Loads standard mission settings.
@@ -11,7 +11,7 @@ Returns:
 	Nothing.
 
 Examples:
-	[] call LXII_tl_legioArsenal_fnc_edenLoadSettings;
+	[] call LXII_legioArsenal_fnc_edenLoadSettings;
 
 Author:
 	Met

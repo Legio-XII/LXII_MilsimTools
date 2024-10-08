@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_addBarracks
+Function: LXII_legioArsenal_fnc_addBarracks
 
 Description:
 	Adds filtered Arsenal, and other Viking Studios functions such as "Full Heal", etc.
@@ -13,7 +13,7 @@ Returns:
 	Nothing
 
 Examples:
-	[_position, _objectUnderCursor] call LXII_tl_legioArsenal_fnc_addBarracks;
+	[_position, _objectUnderCursor] call LXII_legioArsenal_fnc_addBarracks;
 
 Author:
 	Arend
@@ -40,7 +40,7 @@ private _availableFilterNames = [
 	"Mission"
 ];
 
-private _arsenalObjects = [LXII_tl_legioArsenal_arsenal_objects, true] call LXII_tl_legioArsenal_fnc_strToArray;
+private _arsenalObjects = [LXII_legioArsenal_arsenal_objects, true] call LXII_legioArsenal_fnc_strToArray;
 
 private _dialogOptions = [["COMBO", "Filter", [_availableFilters, _availableFilterNames]]];
 private _dialogParameters = [["_filter", ""]];
@@ -68,7 +68,7 @@ _dialogParameters = _dialogParameters + [["_hasFullHeal", false]];
 _dialogOptions = _dialogOptions + [["CHECKBOX", "Add Spectator?", false]];
 _dialogParameters = _dialogParameters + [["_hasSpectator", false]];
 
-[format["Dialog Settings: %1, Dialog Controls: %2, Obj: %3", _dialogOptions, _dialogParameters, _objects], "legioArsenal\functions\zeus_modules\fn_addBarracks.sqf"] call LXII_tl_legioArsenal_fnc_log;
+[format["Dialog Settings: %1, Dialog Controls: %2, Obj: %3", _dialogOptions, _dialogParameters, _objects], "legioArsenal\functions\zeus_modules\fn_addBarracks.sqf"] call LXII_legioArsenal_fnc_log;
 ["Add Filtered Arsenal", _dialogOptions, {
 	(_this select 1) params ["_objects", "_position", "_dialogParameters"];
 	(_this select 0) params _dialogParameters;
@@ -77,7 +77,7 @@ _dialogParameters = _dialogParameters + [["_hasSpectator", false]];
 	if (isNull (_objects select 0)) then {
 		// Object selected to be spawned
 		private _object = _arsenalObject createVehicle _position;
-		[format["Object: %1, Chosen Object: %2", _object, _arsenalObject], "legioArsenal\functions\zeus_modules\fn_addBarracks.sqf"] call LXII_tl_legioArsenal_fnc_log;
+		[format["Object: %1, Chosen Object: %2", _object, _arsenalObject], "legioArsenal\functions\zeus_modules\fn_addBarracks.sqf"] call LXII_legioArsenal_fnc_log;
 
 		["zen_common_addObjects", [[_object], _curator]] call CBA_fnc_serverEvent;
 		_objects = [_object];
@@ -88,27 +88,27 @@ _dialogParameters = _dialogParameters + [["_hasSpectator", false]];
 	if (!isServer) then {
 		{
 			if (_x setOwner 2) then {
-				[format["Changed ownership of %1 to %2", _x, owner _x], "legioArsenal\functions\zeus_modules\fn_addBarracks.sqf"] call LXII_tl_legioArsenal_fnc_log;
+				[format["Changed ownership of %1 to %2", _x, owner _x], "legioArsenal\functions\zeus_modules\fn_addBarracks.sqf"] call LXII_legioArsenal_fnc_log;
 			} else {
-				[format["Could not change ownership of %1 to %2", _x, owner _x], "legioArsenal\functions\zeus_modules\fn_addBarracks.sqf"] call LXII_tl_legioArsenal_fnc_log;
+				[format["Could not change ownership of %1 to %2", _x, owner _x], "legioArsenal\functions\zeus_modules\fn_addBarracks.sqf"] call LXII_legioArsenal_fnc_log;
 			};
 		} foreach _objects;
 	};
 
 
 	// Add Arsenal 
-	[_filter, _objects] remoteExec ["LXII_tl_legioArsenal_fnc_arsenal", 2];
+	[_filter, _objects] remoteExec ["LXII_legioArsenal_fnc_arsenal", 2];
 
 	if (_hasFullHeal) then {
-		[_objects] remoteExec ["LXII_tl_legioArsenal_fnc_fullHeal", 2];
+		[_objects] remoteExec ["LXII_legioArsenal_fnc_fullHeal", 2];
 	};
 
 	if (_hasSpectator) then {
 		{
-			[[_x], {[_this select 0] call LXII_tl_legioArsenal_fnc_addSpectator;}] remoteExec ["BIS_fnc_call", 0, _x];
+			[[_x], {[_this select 0] call LXII_legioArsenal_fnc_addSpectator;}] remoteExec ["BIS_fnc_call", 0, _x];
 		} foreach _objects;
 	};
 
 	// Show Message
-	["Barracks functions added!"] call LXII_tl_legioArsenal_fnc_notifyZeus;
+	["Barracks functions added!"] call LXII_legioArsenal_fnc_notifyZeus;
 }, {}, [_objects, _position, _dialogParameters]] call zen_dialog_fnc_create;

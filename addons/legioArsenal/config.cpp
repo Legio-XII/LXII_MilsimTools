@@ -1,5 +1,5 @@
 class CfgPatches {
-	class LXII_tl_legioArsenal {
+	class LXII_legioArsenal {
 		// Addon identity
 		name = "Legio XII - Core";
 		author = "Qaiten";
@@ -17,9 +17,9 @@ class CfgPatches {
 	};
 };
 class CfgFunctions {
-	class LXII_tl_legioArsenal {
+	class LXII_legioArsenal {
 		class common {
-			file = "\x\LXII_tl\legioArsenal\functions\common";
+			file = "\x\LXII\legioArsenal\functions\common";
 			class addDeployActions {};
 			class addFullHeal {};
 			class addSpectator {};
@@ -42,19 +42,19 @@ class CfgFunctions {
 		};
 
 		class zeus_modules {
-			file = "\x\LXII_tl\legioArsenal\functions\zeus_modules";
+			file = "\x\LXII\legioArsenal\functions\zeus_modules";
 			class addBarracks {};
 			class forceRespawn {};
 			class addMusicRadio {};
 		};
 
 		class eden_modules {
-			file = "\x\LXII_tl\legioArsenal\functions\eden_modules";
+			file = "\x\LXII\legioArsenal\functions\eden_modules";
 			class barracksModule {};
 		};
 
 		class utilities {
-			file = "\x\LXII_tl\legioArsenal\functions\utilities";
+			file = "\x\LXII\legioArsenal\functions\utilities";
 			class arrayFlatten {};
 			class log {};
 			class strToArray {};
@@ -64,14 +64,14 @@ class CfgFunctions {
 };
 
 class Extended_PreInit_EventHandlers {
-	class LXII_tl_legioArsenal_preInit {
-		init = "call compile preprocessFileLineNumbers '\x\LXII_tl\legioArsenal\XEH_preInit.sqf'";
+	class LXII_legioArsenal_preInit {
+		init = "call compile preprocessFileLineNumbers '\x\LXII\legioArsenal\XEH_preInit.sqf'";
 	};
 };
 
 class Extended_PostInit_EventHandlers {
-	class LXII_tl_legioArsenal_postInit {
-		init = "call compile preprocessFileLineNumbers '\x\LXII_tl\legioArsenal\XEH_postInit.sqf'";
+	class LXII_legioArsenal_postInit {
+		init = "call compile preprocessFileLineNumbers '\x\LXII\legioArsenal\XEH_postInit.sqf'";
 	};
 };
 

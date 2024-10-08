@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_setRespawnTimer
+Function: LXII_legioArsenal_fnc_setRespawnTimer
 
 Description:
 	Set the respawn timer CBA Setting.
@@ -11,7 +11,7 @@ Returns:
 	Nothing
 
 Examples:
-	[134] call LXII_tl_legioArsenal_fnc_setRespawnTimer;
+	[134] call LXII_legioArsenal_fnc_setRespawnTimer;
 
 Author:
 	Arend
@@ -22,12 +22,12 @@ params [["_time", 0, [0]]];
 [
 	"cba_settings_setSettingMission",
 	[
-		"LXII_tl_legioArsenal_respawn_timer",
+		"LXII_legioArsenal_respawn_timer",
 		_time,
 		1 // Priority
 	],
-	"LXII_tl_legioArsenal_respawn_timer_event" // Event ID, must be unique
+	"LXII_legioArsenal_respawn_timer_event" // Event ID, must be unique
 ] call CBA_fnc_globalEventJIP;
 
-[format["Respawn timer set to %1", [_time, "M:SS"] call CBA_fnc_formatElapsedTime]] call LXII_tl_legioArsenal_fnc_notifyZeus;
-[format["Respawn timer set to %1", [_time, "M:SS"] call CBA_fnc_formatElapsedTime], "legioArsenal\functions\common\fn_setRespawnTimer.sqf"] call LXII_tl_legioArsenal_fnc_log;
+[format["Respawn timer set to %1", [_time, "M:SS"] call CBA_fnc_formatElapsedTime]] call LXII_legioArsenal_fnc_notifyZeus;
+[format["Respawn timer set to %1", [_time, "M:SS"] call CBA_fnc_formatElapsedTime], "legioArsenal\functions\common\fn_setRespawnTimer.sqf"] call LXII_legioArsenal_fnc_log;

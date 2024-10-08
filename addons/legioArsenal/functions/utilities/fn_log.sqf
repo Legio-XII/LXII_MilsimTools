@@ -24,10 +24,10 @@ params [["_message", "No Message", []], ["_fileName", "N/A", []]];
 
 if (vs_core_debug) then {
 	if (_fileName isEqualTo "N/A") then {
-		systemChat (format["[Viking Studios Debug] %1", _message]);
-		diag_log format["[Viking Studios Debug] %1", _message];
+		systemChat (format["[Legio XII Debug] %1", _message]);
+		diag_log format["[Legio XII Debug] %1", _message];
 	} else {
-		systemChat (format["[Viking Studios Debug] [%1] %2", _fileName, _message]);
-		diag_log format["[Viking Studios Debug] [%1] %2", _fileName, _message];
+		systemChat (format["[Legio XII Debug] [%1] %2", _fileName, _message]);
+		diag_log format["[Legio XII Debug] [%1] %2", _fileName, _message];
 	};
 };

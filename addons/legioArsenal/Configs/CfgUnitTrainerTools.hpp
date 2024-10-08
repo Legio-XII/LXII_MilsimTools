@@ -12,11 +12,11 @@ class CfgVehicles {
 	class Man;
 	class CAManBase: Man {
 		class ACE_Actions {
-			class LXII_tl_legioArsenal_FullHeal {
+			class LXII_legioArsenal_FullHeal {
 				displayName = "Heal player";
-				condition = "[_player] call LXII_tl_legioArsenal_fnc_isCurator";
+				condition = "[_player] call LXII_legioArsenal_fnc_isCurator";
 				statement = "[_player, _target] call ace_medical_treatment_fnc_fullHeal;hint format[""%1 healed!"", name _target];";
-				icon = "x\LXII_tl\legioArsenal\red-cross.paa";
+				icon = "x\LXII\legioArsenal\red-cross.paa";
 				position = "(_target selectionPosition [""spine3"", ""Memory""]) vectorAdd [0,0.1,0]";
 				distance = 4;
 				exceptions[] = {"isNotInside", "isNotSitting"};

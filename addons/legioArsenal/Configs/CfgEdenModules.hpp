@@ -12,7 +12,7 @@ Author:
 ---------------------------------------------------------------------------- */
 class CfgFactionClasses {
 	class NO_CATEGORY;
-	class LXII_tl_legioArsenal_Modules : NO_CATEGORY {
+	class LXII_legioArsenal_Modules : NO_CATEGORY {
 		displayName = "Legio XII Modules";
 	};
 };
@@ -35,13 +35,13 @@ class CfgVehicles {
 		};
 	};
 
-	class LXII_tl_legioArsenal_Barracks_Module : Module_F {
+	class LXII_legioArsenal_Barracks_Module : Module_F {
 		scope = 2;
 		displayName = "Barracks Functions";
 		// icon = "";
-		category = "LXII_tl_legioArsenal_Modules";
+		category = "LXII_legioArsenal_Modules";
 
-		function = "LXII_tl_legioArsenal_fnc_barracksModule";
+		function = "LXII_legioArsenal_fnc_barracksModule";
 		functionPriority = 2;
 		isGlobal = 0;
 		isTriggerActivated = 0;
@@ -51,14 +51,14 @@ class CfgVehicles {
 
 		class Attributes : AttributesBase {
 			class HasArsenal : Checkbox {
-				property = "LXII_tl_legioArsenal_Barracks_Module_HasArsenal";
+				property = "LXII_legioArsenal_Barracks_Module_HasArsenal";
 				displayName = "Arsenal";
 				tooltip = "Add Arsenal to the object";
 				defaultValue = true;
 			};
 
 			class ArsenalFilter : Combo {
-				property = "LXII_tl_legioArsenal_Barracks_Module_ArsenalFilter";
+				property = "LXII_legioArsenal_Barracks_Module_ArsenalFilter";
 				displayName = "Arsenal Filter";
 				tooltip = "The filter to set on the Arsenal";
 				typeName = "STRING";
@@ -82,14 +82,14 @@ class CfgVehicles {
 			};
 
 			class HasFullHeal : Checkbox {
-				property = "LXII_tl_legioArsenal_Barracks_Module_HasFullHeal";
+				property = "LXII_legioArsenal_Barracks_Module_HasFullHeal";
 				displayName = "Full Heal";
 				tooltip = "Add Full Heal to object";
 				defaultValue = true;
 			};
 
 			class HasSpectator : Checkbox {
-				property = "LXII_tl_legioArsenal_Barracks_Module_HasSpectator";
+				property = "LXII_legioArsenal_Barracks_Module_HasSpectator";
 				displayName = "Spectator";
 				tooltip = "Add Spectator to object";
 				defaultValue = true;

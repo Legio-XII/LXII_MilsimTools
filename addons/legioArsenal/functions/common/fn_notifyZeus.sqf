@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: LXII_tl_legioArsenal_fnc_notifyZeus
+Function: LXII_legioArsenal_fnc_notifyZeus
 
 Description:
 	Show Zeus Notification along with an appropriate sound effect.
@@ -12,8 +12,8 @@ Returns:
 	Nothing
 
 Examples:
-	["Player has respawned", "warning"] call LXII_tl_legioArsenal_fnc_notifyZeus;
-	[["Player has died", "and another may afterwards"], "warning"] call LXII_tl_legioArsenal_fnc_notifyZeus;
+	["Player has respawned", "warning"] call LXII_legioArsenal_fnc_notifyZeus;
+	[["Player has died", "and another may afterwards"], "warning"] call LXII_legioArsenal_fnc_notifyZeus;
 
 Author:
 	Arend
@@ -21,7 +21,7 @@ License GPL-2.0
 ---------------------------------------------------------------------------- */
 params [["_message", "", ["", []]], ["_type", "info", [""]]];
 
-if (!(player call LXII_tl_legioArsenal_fnc_isCurator)) exitWith {};
+if (!(player call LXII_legioArsenal_fnc_isCurator)) exitWith {};
 
 if (typeName _message == "ARRAY" && count _message > 1) then {
 	_message = format _message;
