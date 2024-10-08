@@ -95,7 +95,7 @@ _entities =
 	],
 	[
 		["Logic", "LXII_tl_legioArsenal_Barracks_Module", _spawnPos vectorAdd [-4, 7]],
-		["LXII_tl_legioArsenal_Barracks_Module_ArsenalFilter", "Standard"],
+		["LXII_tl_legioArsenal_Barracks_Module_ArsenalFilter", "Kasrkin"],
 		["ArsenalObject", true]
 	],
 	[

@@ -4,7 +4,7 @@ params [["_filter", "", [""]]];
 private _whitelist = [];
 switch (toLowerANSI _filter) do {
 	case "mission": { _whitelist = parseSimpleArray lxii_legioArsenal_arsenal_whitelist_mission; };
-	case "standard": { _whitelist = parseSimpleArray lxii_legioArsenal_arsenal_whitelist_Standard; };
+	case "Kasrkin": { _whitelist = parseSimpleArray lxii_legioArsenal_arsenal_whitelist_Kasrkin; };
 	default { _whitelist = true; };
 };
 

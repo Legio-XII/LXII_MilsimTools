@@ -30,13 +30,13 @@ if (_objects isEqualType objNull) then {
 // Show Filter Dialog
 private _availableFilters = [
 	"",
-	"standard",
+	"Kasrkin",
 	"mission"
 ];
 
 private _availableFilterNames = [
 	["Full", "Unlimited Arsenal!"],
-	["Standard", "All Legio XII equipment"],
+	["Kasrkin", "All Legio XII equipment"],
 	"Mission"
 ];
 
