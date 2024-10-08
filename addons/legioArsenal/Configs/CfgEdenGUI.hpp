@@ -1,5 +1,5 @@
 /*License GPL-2.0*/
-class LXII_edenGUI {
+class LXII_legioArsenal_edenGUI {
 	idd = 1901;
 	movingEnable = 1;
 	class Controls{

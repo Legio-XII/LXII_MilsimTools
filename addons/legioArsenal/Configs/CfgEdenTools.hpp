@@ -49,9 +49,9 @@ class CfgGroups
 			name = "LXII";
 			scope = 0;
 			class infantry {
-				name = "";
+				name = "Infantry";
 				class MTP_zeus {
-					name = "";
+					name = "Zeus MTP";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -67,7 +67,7 @@ class CfgGroups
 					};
 				};
 				class MTP_section {
-					name = "";
+					name = "MTP Section";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -114,7 +114,7 @@ class CfgGroups
 
 				};
 				class MTP_command {
-					name = "";
+					name = "Command Section MTP";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -140,7 +140,7 @@ class CfgGroups
 					};
 				};
 				class MTP_defaults {
-					name = "";
+					name = "Defaults MTP";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -161,7 +161,7 @@ class CfgGroups
 					};
 				};
 				class PACIFIC_zeus {
-					name = "";
+					name = "Zeus Pacific";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -177,7 +177,7 @@ class CfgGroups
 					};
 				};
 				class PACIFIC_section {
-					name = "";
+					name = "Section Pacific";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -224,7 +224,7 @@ class CfgGroups
 
 				};
 				class PACIFIC_command {
-					name = "";
+					name = "Command Sec Pacific";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -250,7 +250,7 @@ class CfgGroups
 					};
 				};
 				class PACIFIC_defaults {
-					name = "";
+					name = "Default Pacific";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -271,7 +271,7 @@ class CfgGroups
 					};
 				};
 				class WOODLAND_zeus {
-					name = "";
+					name = "Zeus Woodland";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -287,7 +287,7 @@ class CfgGroups
 					};
 				};
 				class WOODLAND_section {
-					name = "";
+					name = "Woodland Section";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -334,7 +334,7 @@ class CfgGroups
 
 				};
 				class WOODLAND_command {
-					name = "";
+					name = "Woodland Command Sec";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
@@ -360,7 +360,7 @@ class CfgGroups
 					};
 				};
 				class WOODLAND_defaults {
-					name = "";
+					name = "Woodland Defaults";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;

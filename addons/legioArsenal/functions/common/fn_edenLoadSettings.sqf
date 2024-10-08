@@ -25,6 +25,6 @@ set3DENMissionAttributes
 	["Multiplayer", "disabledAI", true],
 	["Multiplayer", "respawn", 3],
 	["Multiplayer", "respawnTemplates", ["ace_spectator", "Counter", "Wave"]],
-	["Multiplayer", "respawnDelay", 90]
+	["Multiplayer", "respawnDelay", 10]
 ];
 systemChat "Loaded LXII Settings";

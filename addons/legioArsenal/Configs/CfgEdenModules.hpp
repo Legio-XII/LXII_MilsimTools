@@ -69,10 +69,15 @@ class CfgVehicles {
 						value = "";
 						default = 1;
 					};
-					class Standard {
+					class kasrkin {
 						// all camo kits
-						name = "Standard";
-						value = "standard";
+						name = "Kasrkin";
+						value = "kasrkin";
+					};
+					class scion {
+						// all camo kits
+						name = "Scion";
+						value = "scion";
 					};
 					class Mission {
 						name = "Mission";
@@ -104,7 +109,7 @@ class CfgVehicles {
 
 			class LocationArea_F {
 				description[] = {
-					"Add barracks functions to synced objects that give the players certain Viking Studios functions to use via ACE interaction.",
+					"Add barracks functions to synced objects that give the players certain Legio XII functions to use via ACE interaction.",
 					"",
 					"Barracks functions include:",
 					"- Filtered Arsenal",
