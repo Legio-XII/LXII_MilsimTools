@@ -31,12 +31,14 @@ if (_objects isEqualType objNull) then {
 private _availableFilters = [
 	"",
 	"kasrkin",
+	"scion",
 	"mission"
 ];
 
 private _availableFilterNames = [
 	["Full", "Unlimited Arsenal!"],
 	["Kasrkin", "All Legio XII equipment"],
+	["Scion", "Scion Equipment Legio XII"],
 	"Mission"
 ];
 
