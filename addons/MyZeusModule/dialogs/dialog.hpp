@@ -1,9 +1,3 @@
-// Include necessary ArmA 3 UI definitions
-#include "\A3\ui_f\hpp\defineCommonGrids.inc"
-#include "\A3\ui_f\hpp\defineCommonColors.inc"
-#include "\A3\ui_f\hpp\defineResincl.inc"
-
-// Define necessary UI classes if not included
 class IGUIBack {
     type = 0;
     idc = -1;
@@ -78,7 +72,7 @@ class RscButton {
 };
 
 class MyZeusModule_WhitelistDialog {
-    idd = -1;
+    idd = 312;
     movingEnable = false;
     enableSimulation = true;
 
