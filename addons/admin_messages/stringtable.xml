@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="LXII_CORE">
+	<Package name="admin_messages">
+		<Container name="gui">
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_SENDBOXTITLEPLAYER">
+				<Original>MESSAGE ADMIN</Original>
+				<English>MESSAGE ADMIN</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_SENDBOXTITLEADMIN">
+				<Original>MESSAGE PLAYER</Original>
+				<English>MESSAGE PLAYER</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_SENDBOXBUTTON">
+				<Original>SEND</Original>
+				<English>SEND</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_SELECTVALIDRECIP">
+				<Original>SELECT VALID RECIPIENT</Original>
+				<English>SELECT VALID RECIPIENT</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_SENDTO">
+				<Original>SEND TO %1</Original>
+				<English>SEND TO %1</English>
+				<German>SENDEN AN %1</German>
+			</Key>
+		</Container>
+		<Container name="listbox">
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_LATESTCONVOS">
+				<Original>LATEST CONVERSATIONS</Original>
+				<English>LATEST CONVERSATIONS</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_BYCATEGORY">
+				<Original>CATEGORIES</Original>
+				<English>CATEGORIES</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_EVERYONE">
+				<Original>EVERYONE</Original>
+				<English>EVERYONE</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_OTHERADMINS">
+				<Original>OTHER ADMINS AND ZEUS</Original>
+				<English>OTHER ADMINS AND ZEUS</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_BYPLAYER">
+				<Original>PLAYERS</Original>
+				<English>PLAYERS</English>
+			</Key>
+		</Container>
+		<Container name="functions">
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_CHANNEL">
+				<Original>Adminmessage (%1):</Original>
+				<English>Adminmessage (%1):</English>
+			</Key>
+			<Key ID="STR_LXII_CORE_ADMIN_MESSAGES_TO">
+				<Original>to</Original>
+				<English>to</English>
+			</Key>
+		</Container>
+	</Package>
+</Project>
