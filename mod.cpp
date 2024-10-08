@@ -1,5 +1,5 @@
 name = "Legio XII - Essentials";
-picture = "legio.paa";
+picture = "x\LXII\legio.paa";
 hidePicture = "true";
 hideName = "false";
 actionName = "Discord";
