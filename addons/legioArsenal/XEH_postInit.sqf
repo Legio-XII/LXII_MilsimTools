@@ -8,17 +8,18 @@ License GPL-2.0
 		!(isNil "cba_settings_ready")
 	};
 
-	if (isServer) then {
-		_loadoutUnits = allUnits select {_x getVariable ["LXII_legioArsenal_isLoadout", false]};
-		LXII_legioArsenal_loadouts = [];
-		{
-			_role = _x getVariable "LXII_legioArsenal_loadout_role";
-			LXII_legioArsenal_loadouts pushBack [_role, getUnitLoadout _x];
-			deleteVehicle _x;
-		} forEach _loadoutUnits;
-		publicVariable "LXII_legioArsenal_loadouts";
-		[LXII_legioArsenal_loadouts] remoteExec ["LXII_legioArsenal_fnc_setDefaultLoadouts", 0, true];
-	};
+///// Commenting out due to Default Loadouts in LXII - Factions mod
+	// if (isServer) then {
+	// 	_loadoutUnits = allUnits select {_x getVariable ["LXII_legioArsenal_isLoadout", false]};
+	// 	LXII_legioArsenal_loadouts = [];
+	// 	{
+	// 		_role = _x getVariable "LXII_legioArsenal_loadout_role";
+	// 		LXII_legioArsenal_loadouts pushBack [_role, getUnitLoadout _x];
+	// 		deleteVehicle _x;
+	// 	} forEach _loadoutUnits;
+	// 	publicVariable "LXII_legioArsenal_loadouts";
+	// 	[LXII_legioArsenal_loadouts] remoteExec ["LXII_legioArsenal_fnc_setDefaultLoadouts", 0, true];
+	// };
 };
 
 [{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
@@ -38,21 +39,6 @@ License GPL-2.0
 	["ZEN loaded successfully", "legioArsenal\XEH_preInit.sqf"] call LXII_legioArsenal_fnc_log;
 }, [], 120, {
 	["ZEN not loaded in time!", "legioArsenal\XEH_preInit.sqf"] call LXII_legioArsenal_fnc_log;
-}] call CBA_fnc_waitUntilAndExecute;
-
-
-[{isClass (configFile >> "CfgPatches" >> "klpq_musicRadio") && isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
-	["Legio XII Modules", "Add Music Radio",
-	{
-		// Array of position AGLS, ObjNull or the object under the module as it's placed
-		params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-		[_position, _objectUnderCursor] call LXII_legioArsenal_fnc_addMusicRadio;
-	}] call zen_custom_modules_fnc_register;
-
-	["KLPQ Music Player loaded successfully", "legioArsenal\XEH_preInit.sqf"] call LXII_legioArsenal_fnc_log;
-}, [], 120, {
-	["KLPQ Music Player not loaded in time!", "legioArsenal\XEH_preInit.sqf"] call LXII_legioArsenal_fnc_log;
 }] call CBA_fnc_waitUntilAndExecute;
 
 // Export the mission setting into the CBA Setting on mission start

@@ -3,6 +3,10 @@ params [["_filter", "", [""]]];
 [format["Getting whitelists for filter %1", _filter], "legioArsenal\functions\common\fn_getArsenalFilter.sqf"] call LXII_legioArsenal_fnc_log;
 private _whitelist = [];
 switch (toLowerANSI _filter) do {
+	case "woodland": { _whitelist = parseSimpleArray LXII_legioArsenal_arsenal_whitelist_woodland; };
+	case "desert": { _whitelist = parseSimpleArray LXII_legioArsenal_arsenal_whitelist_desert; };
+	case "winter": { _whitelist = parseSimpleArray LXII_legioArsenal_arsenal_whitelist_winter; };
+	case "solar_aux": { _whitelist = parseSimpleArray LXII_legioArsenal_arsenal_whitelist_solar_aux; };
 	case "mission": { _whitelist = parseSimpleArray LXII_legioArsenal_arsenal_whitelist_mission; };
 	case "kasrkin": { _whitelist = parseSimpleArray LXII_legioArsenal_arsenal_whitelist_kasrkin; };
 	case "scion": { _whitelist = parseSimpleArray LXII_legioArsenal_arsenal_whitelist_scion; };

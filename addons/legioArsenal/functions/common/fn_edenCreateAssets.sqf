@@ -15,31 +15,42 @@
 	Nothing.
 
 	Examples:
-	["Odin", "Valhalla", "MTP", 3, false] call LXII_legioArsenal_fnc_edenCreateAssets;
+	["Odin", "Valhalla", "Woodland", 3, false] call LXII_legioArsenal_fnc_edenCreateAssets;
 
 	Author:
 	Met
 License GPL-2.0
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Raider", [""]], ["_zeusCallsign", "Monarch", [""]], ["_camo", "MTP", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", false, [false]]];
+params [["_callsign", "Cohort", [""]], ["_zeusCallsign", "Centurion", [""]], ["_camo", "Woodland", [""]], ["_numberOfSections", 3, [0]]];
 
 if (_callsign == "") then {
-	_callsign = "Raider";
+	_callsign = "Cohort";
 };
 
 if (_zeusCallsign == "") then {
-	_zeusCallsign = "Monarch";
+	_zeusCallsign = "Centurion";
 };
 
 if (_camo == "") then {
-	_camo = "MTP";
+	_camo = "Woodland";
 };
 
 _camo = toUpper _camo;
-_nameZeus = format ["%1_zeus", _camo];
-_nameSection = format ["%1_section", _camo];
-_nameCommand = format ["%1_command", _camo];
-_nameDefaults = format ["%1_defaults", _camo];
+private _camoMap = [
+    ["WOODLAND", "WDLD"],
+    ["DESERT", "DSRT"],
+    ["WINTER", "WNTR"],
+    ["SOLAR_AUX", "SA"]
+];
+private _camoShort = _camo;
+{
+    if (_camo == _x select 0) exitWith { _camoShort = _x select 1; };
+} forEach _camoMap;
+
+_nameZeus = format ["LXII_zeus_%1", _camoShort];
+_nameSection = format ["LXII_section_%1", _camoShort];
+_nameCommand = format ["LXII_command_%1", _camoShort];
+_nameDefaults = format ["LXII_defaults_%1", _camoShort];
 
 _centralPos = screenToWorld [0.5, 0.5];
 _camPos = [getPosATL get3DENCamera select 0, getPosATL get3DENCamera select 1, 0];
@@ -74,28 +85,13 @@ _entities =
 		["ModuleCurator_F_Addons", 3]
 	],
 	[
-		["Logic", "HeadlessClient_F", _spawnPos vectorAdd [-2, 0]],
-		["ControlMp", true],
-		["name", "HC1"]
-	],
-	[
-		["Logic", "HeadlessClient_F", _spawnPos vectorAdd [-2, -1]],
-		["ControlMp", true],
-		["name", "HC2"]
-	],
-	[
-		["Logic", "HeadlessClient_F", _spawnPos vectorAdd [-2, -2]],
-		["ControlMp", true],
-		["name", "HC3"]
-	],
-	[
 		["Object", "B_supplyCrate_F", _spawnPos vectorAdd [-3, 6]],
 		["allowDamage", false],
 		["ArsenalObject", true]
 	],
 	[
 		["Logic", "LXII_legioArsenal_Barracks_Module", _spawnPos vectorAdd [-4, 7]],
-		["LXII_legioArsenal_Barracks_Module_ArsenalFilter", "Kasrkin"],
+		["LXII_legioArsenal_Barracks_Module_ArsenalFilter", "Full"],
 		["ArsenalObject", true]
 	],
 	[
@@ -107,42 +103,28 @@ _entities =
 
 _sections =
 [
-	[
-		[configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
-		"Command",
-		["description", format ["1: 1IC@%1 1-Actual", _callsign ]]
-	],
-	[
-		[configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
-		"Zeus",
-		["description", format ["1: Zeus@%1", _zeusCallsign]]
-	]
+    [
+        [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "LXII_legioArsenal_tools" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
+        "Command",
+        ["description", format ["1: 1IC@%1 1-Actual", _callsign ]]
+    ],
+    [
+        [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "LXII_legioArsenal_tools" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
+        "Zeus",
+        ["description", format ["1: Zeus@%1", _zeusCallsign]]
+    ]
 ];
 
-// Individual entities, such as arsenals and headless clients
-_last = "";
-{
-	_entity = _x select 0;
-	_attributeOne = _x select 1;
-	_attributeTwo = _x select 2;
-	_attributeThree = _x select 3;
-	_current = create3DENEntity _entity, _current set3DENAttribute _attributeOne, _current set3DENAttribute _attributeTwo, _current set3DENAttribute _attributeThree;
-	if ((_attributeTwo select 0) == "ArsenalObject") then {
-		add3DENConnection ["Sync", [_last], _current];
-		_last = _current;
-	};
-} forEach _entities;
-
 // The main sections
-_num = 1;
+_num = 0;
 for "_i" from 1 to _numberOfSections do {
-	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
+    create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "LXII_legioArsenal_tools" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
 	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
 	_ix = 3;
 	{
 		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
-		if (_unitDisplayName == "IC MTP" && !isFormationLeader _x) then {
+		if (_unitDisplayName == "IC Woodland" && !isFormationLeader _x) then {
 			_x set3DENAttribute ["description", "2: 2IC"];
 		} else {
 			if (_x getUnitTrait "Medic") then {
@@ -172,14 +154,18 @@ for "_i" from 1 to _numberOfSections do {
 	_groupComp = get3DENSelected "Object";
 	_group = _groupComp select 0;
 	if ((_attributeOne) == "Zeus") then {
-		leader _group set3DENAttribute ["name", "zeusOne"];
-		_asZeus = _groupComp select 1;
-		_asZeus set3DENAttribute ["description", "2: A.Zeus"];
-		_asZeus set3DENAttribute ["name", "zeusTwo"];
-	} else {
+    private _zeusUnits = units _group;
+    if (count _zeusUnits > 0) then {
+        (_zeusUnits select 0) set3DENAttribute ["name", "zeusOne"];
+    };
+    if (count _zeusUnits > 1) then {
+        (_zeusUnits select 1) set3DENAttribute ["name", "zeusTwo"];
+        (_zeusUnits select 1) set3DENAttribute ["description", "2: A.Zeus"];
+    };
+} else {
 		{
 			_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
-			if (_unitDisplayName == "IC MTP" && !isFormationLeader _x) then {
+			if (_unitDisplayName == "IC Woodland" && !isFormationLeader _x) then {
 				_x set3DENAttribute ["description", "2: 2IC"];
 			} else {
 				if (_x getUnitTrait "Medic") then {
@@ -195,13 +181,27 @@ for "_i" from 1 to _numberOfSections do {
 } forEach _sections;
 
 // default Loadouts
-if (_createDefaults) then {
-	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
-	set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "LXII_legioArsenal_3den_Loadout", true]];
-	_groupComp = get3DENSelected "Object";
-	{
-		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
-		_x set3DENAttribute ["LXII_legioArsenal_3den_LoadoutName", _unitDisplayName];
-	} forEach _groupComp;
-	set3DENSelected [];
-};
+// if (_createDefaults) then {
+// 	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_num + 2, 3, 0]];
+// 	set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "LXII_legioArsenal_3den_Loadout", true]];
+// 	_groupComp = get3DENSelected "Object";
+// 	{
+// 		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
+// 		_x set3DENAttribute ["LXII_legioArsenal_3den_LoadoutName", _unitDisplayName];
+// 	} forEach _groupComp;
+// 	set3DENSelected [];
+// };
+
+// Spawn entities (Zeus modules, Arsenals, etc.)
+{
+    private _entityData = _x;
+    private _args = _entityData select 0;
+    private _attributes = _entityData select [1, count _entityData - 1];
+    private _entity = create3DENEntity _args;
+    {
+        _entity set3DENAttribute _x;
+    } forEach _attributes;
+} forEach _entities;
+
+// Close the dialog after spawning assets
+closeDialog 0;

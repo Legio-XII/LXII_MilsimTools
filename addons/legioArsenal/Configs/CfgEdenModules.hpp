@@ -69,6 +69,27 @@ class CfgVehicles {
 						value = "";
 						default = 1;
 					};
+					class woodland {
+						// all camo kits
+						name = "Woodland";
+						value = "woodland";
+					};
+					class desert {
+						// all camo kits
+						name = "Desert";
+						value = "desert";
+					};
+					class winter {
+						// all camo kits
+						name = "Winter";
+						value = "winter";
+					};
+					class solar_aux {
+						// all camo kits
+						name = "Solar Auxilia";
+						value = "solar_aux";
+					};
+
 					class kasrkin {
 						// all camo kits
 						name = "Kasrkin";

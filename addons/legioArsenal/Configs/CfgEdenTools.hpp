@@ -1,18 +1,20 @@
 /*License GPL-2.0*/
-#define MTP_ASTEAMLEADER "B_Soldier_SL_F"
-#define MTP_TEAMLEADER "B_Soldier_TL_F"
-#define MTP_MEDIC "B_medic_F"
-#define MTP_RIFLEMAN "B_Soldier_F"
-
-#define PACIFIC_ASTEAMLEADER "B_T_Soldier_SL_F"
-#define PACIFIC_TEAMLEADER "B_T_Soldier_TL_F"
-#define PACIFIC_MEDIC "B_T_Medic_F"
-#define PACIFIC_RIFLEMAN "B_T_Soldier_F"
-
-#define WOODLAND_ASTEAMLEADER "B_W_Soldier_SL_F"
-#define WOODLAND_TEAMLEADER "B_W_Soldier_TL_F"
-#define WOODLAND_MEDIC "B_W_Medic_F"
-#define WOODLAND_RIFLEMAN "B_W_Soldier_F"
+#define LXII_ASTEAMLEADER_WDLD "BNB_FA_LXII_IC_Woodland"
+#define LXII_TEAMLEADER_WDLD "BNB_FA_LXII_IC_Woodland"
+#define LXII_MEDIC_WDLD "BNB_FA_LXII_Medic_Woodland"
+#define LXII_RIFLEMAN_WDLD "BNB_FA_LXII_Rifleman_Woodland"
+#define LXII_ASTEAMLEADER_DSRT "BNB_FA_LXII_IC_Desert"
+#define LXII_TEAMLEADER_DSRT "BNB_FA_LXII_IC_Desert"
+#define LXII_MEDIC_DSRT "BNB_FA_LXII_Medic_Desert"
+#define LXII_RIFLEMAN_DSRT "BNB_FA_LXII_Rifleman_Desert"
+#define LXII_ASTEAMLEADER_WNTR "BNB_FA_LXII_IC_Winter"
+#define LXII_TEAMLEADER_WNTR "BNB_FA_LXII_IC_Winter"
+#define LXII_MEDIC_WNTR "BNB_FA_LXII_Medic_Winter"
+#define LXII_RIFLEMAN_WNTR "BNB_FA_LXII_Rifleman_Winter"
+#define LXII_ASTEAMLEADER_SA "BNB_FA_LXII_IC_SA"
+#define LXII_TEAMLEADER_SA "BNB_FA_LXII_IC_SA"
+#define LXII_MEDIC_SA "BNB_FA_LXII_Medic_SA"
+#define LXII_RIFLEMAN_SA "BNB_FA_LXII_Rifleman_SA"
 
 class ctrlMenuStrip;
 class display3DEN
@@ -42,342 +44,486 @@ class display3DEN
 		};
 	};
 };
+
+// Create a completely hidden faction for these groups
+class CfgFactionClasses {
+	class LXII_legioArsenal_hidden_faction {
+		displayName = "LXII Hidden";
+		scope = 0;  // Completely hidden faction
+		scopeCurator = 0; // Not visible in curator
+		priority = 0;
+		side = 1;
+	};
+};
+
 class CfgGroups
 {
 	class West {
-		class LXII_legioArsenal_compositions {
-			name = "LXII";
+		class LXII_legioArsenal_hidden_faction {
+			name = "LXII Hidden Faction";
 			scope = 0;
-			class infantry {
-				name = "Infantry";
-				class MTP_zeus {
-					name = "Zeus MTP";
+			scopeCurator = 0; // Not visible in curator
+			class LXII_legioArsenal_tools {
+				name = "LXII - Eden/Tool Use";
+				scope = 0;
+				scopeCurator = 0; // Not visible in curator
+				class infantry {
+					name = "Infantry";
 					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					scopeCurator = 0; // Not visible in curator
+					class LXII_zeus_WDLD {
+						name = "Zeus Woodland";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = MTP_ASTEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							position[] = {0,0,0};
+							vehicle = LXII_ASTEAMLEADER_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							position[] = {1,0,0};
+							vehicle = LXII_ASTEAMLEADER_WDLD;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1 {
-						position[] = {1,0,0};
-						vehicle = MTP_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-				};
-				class MTP_section {
-					name = "MTP Section";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_section_WDLD {
+						name = "Section Woodland";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit1 {
-						position[] = {0,-3,0};
-						vehicle = MTP_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit2 {
-						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit3 {
-						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit4 {
-						position[] = {1,0,0};
-						vehicle = MTP_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit5 {
-						position[] = {1,-3,0};
-						vehicle = MTP_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit6 {
-						position[] = {1,-6,0};
-						vehicle = MTP_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit7 {
-						position[] = {1,-9,0};
-						vehicle = MTP_RIFLEMAN;
-						rank = "PRIVATE";
-					};
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_TEAMLEADER_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-3,0};
+							vehicle = LXII_ASTEAMLEADER_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit2 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-6,0};
+							vehicle = LXII_MEDIC_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit3 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-9,0};
+							vehicle = LXII_RIFLEMAN_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit4 {
+							side = 1;
+							scope = 0;
+							position[] = {1,0,0};
+							vehicle = LXII_RIFLEMAN_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit5 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-3,0};
+							vehicle = LXII_RIFLEMAN_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit6 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-6,0};
+							vehicle = LXII_RIFLEMAN_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit7 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-9,0};
+							vehicle = LXII_RIFLEMAN_WDLD;
+							rank = "PRIVATE";
+						};
 
-				};
-				class MTP_command {
-					name = "Command Section MTP";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					};
+					class LXII_command_WDLD {
+						name = "Command Section Woodland";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_TEAMLEADER_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-3,0};
+							vehicle = LXII_ASTEAMLEADER_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit2{
+							side = 1;
+							scope = 0;
+							position[] = {0,-6,0};
+							vehicle = LXII_MEDIC_WDLD;
+							rank = "PRIVATE";
+						};
+						class Unit3 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-9,0};
+							vehicle = LXII_RIFLEMAN_WDLD;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1 {
-						position[] = {0,-3,0};
-						vehicle = MTP_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit2{
-						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit3 {
-						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-				};
-				class MTP_defaults {
-					name = "Defaults MTP";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_zeus_DSRT {
+						name = "Zeus Desert";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_ASTEAMLEADER_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {1,0,0};
+							vehicle = LXII_ASTEAMLEADER_DSRT;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1{
-						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit2 {
-						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-				};
-				class PACIFIC_zeus {
-					name = "Zeus Pacific";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_section_DSRT {
+						name = "Section Desert";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = PACIFIC_ASTEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_TEAMLEADER_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-3,0};
+							vehicle = LXII_ASTEAMLEADER_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit2 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-6,0};
+							vehicle = LXII_MEDIC_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit3 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-9,0};
+							vehicle = LXII_RIFLEMAN_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit4 {
+							side = 1;
+							scope = 0;
+							position[] = {1,0,0};
+							vehicle = LXII_RIFLEMAN_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit5 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-3,0};
+							vehicle = LXII_RIFLEMAN_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit6 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-6,0};
+							vehicle = LXII_RIFLEMAN_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit7 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-9,0};
+							vehicle = LXII_RIFLEMAN_DSRT;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1 {
-						position[] = {1,0,0};
-						vehicle = PACIFIC_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-				};
-				class PACIFIC_section {
-					name = "Section Pacific";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_command_DSRT {
+						name = "Command Section Desert";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = PACIFIC_TEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_TEAMLEADER_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-3,0};
+							vehicle = LXII_ASTEAMLEADER_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit2{
+							side = 1;
+							scope = 0;
+							position[] = {0,-6,0};
+							vehicle = LXII_MEDIC_DSRT;
+							rank = "PRIVATE";
+						};
+						class Unit3 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-9,0};
+							vehicle = LXII_RIFLEMAN_DSRT;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1 {
-						position[] = {0,-3,0};
-						vehicle = PACIFIC_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit2 {
-						position[] = {0,-6,0};
-						vehicle = PACIFIC_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit3 {
-						position[] = {0,-9,0};
-						vehicle = PACIFIC_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit4 {
-						position[] = {1,0,0};
-						vehicle = PACIFIC_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit5 {
-						position[] = {1,-3,0};
-						vehicle = PACIFIC_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit6 {
-						position[] = {1,-6,0};
-						vehicle = PACIFIC_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit7 {
-						position[] = {1,-9,0};
-						vehicle = PACIFIC_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-
-				};
-				class PACIFIC_command {
-					name = "Command Sec Pacific";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_zeus_WNTR {
+						name = "Zeus Winter";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = PACIFIC_TEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_ASTEAMLEADER_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {1,0,0};
+							vehicle = LXII_ASTEAMLEADER_WNTR;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1 {
-						position[] = {0,-3,0};
-						vehicle = PACIFIC_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit2{
-						position[] = {0,-6,0};
-						vehicle = PACIFIC_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit3 {
-						position[] = {0,-9,0};
-						vehicle = PACIFIC_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-				};
-				class PACIFIC_defaults {
-					name = "Default Pacific";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_section_WNTR {
+						name = "Section Winter";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = PACIFIC_TEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_TEAMLEADER_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-3,0};
+							vehicle = LXII_ASTEAMLEADER_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit2 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-6,0};
+							vehicle = LXII_MEDIC_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit3 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-9,0};
+							vehicle = LXII_RIFLEMAN_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit4 {
+							side = 1;
+							scope = 0;
+							position[] = {1,0,0};
+							vehicle = LXII_RIFLEMAN_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit5 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-3,0};
+							vehicle = LXII_RIFLEMAN_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit6 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-6,0};
+							vehicle = LXII_RIFLEMAN_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit7 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-9,0};
+							vehicle = LXII_RIFLEMAN_WNTR;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1{
-						position[] = {0,-6,0};
-						vehicle = PACIFIC_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit2 {
-						position[] = {0,-9,0};
-						vehicle = PACIFIC_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-				};
-				class WOODLAND_zeus {
-					name = "Zeus Woodland";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_command_WNTR {
+						name = "Command Section Winter";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = WOODLAND_ASTEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_TEAMLEADER_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-3,0};
+							vehicle = LXII_ASTEAMLEADER_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit2 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-6,0};
+							vehicle = LXII_MEDIC_WNTR;
+							rank = "PRIVATE";
+						};
+						class Unit3 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-9,0};
+							vehicle = LXII_RIFLEMAN_WNTR;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1 {
-						position[] = {1,0,0};
-						vehicle = WOODLAND_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-				};
-				class WOODLAND_section {
-					name = "Woodland Section";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_section_SA {
+						name = "Section Solar Auxilia";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = WOODLAND_TEAMLEADER;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_TEAMLEADER_SA;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-3,0};
+							vehicle = LXII_ASTEAMLEADER_SA;
+							rank = "PRIVATE";
+						};
+						class Unit2 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-6,0};
+							vehicle = LXII_MEDIC_SA;
+							rank = "PRIVATE";
+						};
+						class Unit3 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-9,0};
+							vehicle = LXII_RIFLEMAN_SA;
+							rank = "PRIVATE";
+						};
+						class Unit4 {
+							side = 1;
+							scope = 0;
+							position[] = {1,0,0};
+							vehicle = LXII_RIFLEMAN_SA;
+							rank = "PRIVATE";
+						};
+						class Unit5 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-3,0};
+							vehicle = LXII_RIFLEMAN_SA;
+							rank = "PRIVATE";
+						};
+						class Unit6 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-6,0};
+							vehicle = LXII_RIFLEMAN_SA;
+							rank = "PRIVATE";
+						};
+						class Unit7 {
+							side = 1;
+							scope = 0;
+							position[] = {1,-9,0};
+							vehicle = LXII_RIFLEMAN_SA;
+							rank = "PRIVATE";
+						};
 					};
-					class Unit1 {
-						position[] = {0,-3,0};
-						vehicle = WOODLAND_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit2 {
-						position[] = {0,-6,0};
-						vehicle = WOODLAND_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit3 {
-						position[] = {0,-9,0};
-						vehicle = WOODLAND_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit4 {
-						position[] = {1,0,0};
-						vehicle = WOODLAND_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit5 {
-						position[] = {1,-3,0};
-						vehicle = WOODLAND_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit6 {
-						position[] = {1,-6,0};
-						vehicle = WOODLAND_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit7 {
-						position[] = {1,-9,0};
-						vehicle = WOODLAND_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-
-				};
-				class WOODLAND_command {
-					name = "Woodland Command Sec";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
+					class LXII_command_SA {
+						name = "Command Section Solar Auxilia";
+						scope = 0;
+						faction = "LXII_legioArsenal_hidden_faction";
+						side = 1;
 						position[] = {0,0,0};
-						vehicle = WOODLAND_TEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit1 {
-						position[] = {0,-3,0};
-						vehicle = WOODLAND_ASTEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit2{
-						position[] = {0,-6,0};
-						vehicle = WOODLAND_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit3 {
-						position[] = {0,-9,0};
-						vehicle = WOODLAND_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-				};
-				class WOODLAND_defaults {
-					name = "Woodland Defaults";
-					scope = 0;
-					faction = "BLU_F";
-					side = 1;
-					class Unit0 {
-						position[] = {0,0,0};
-						vehicle = WOODLAND_TEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit1{
-						position[] = {0,-3,0};
-						vehicle = WOODLAND_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit2 {
-						position[] = {0,-6,0};
-						vehicle = WOODLAND_RIFLEMAN;
-						rank = "PRIVATE";
+						class Unit0 {
+							side = 1;
+							scope = 0;
+							position[] = {0,0,0};
+							vehicle = LXII_TEAMLEADER_SA;
+							rank = "PRIVATE";
+						};
+						class Unit1 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-3,0};
+							vehicle = LXII_ASTEAMLEADER_SA;
+							rank = "PRIVATE";
+						};
+						class Unit2 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-6,0};
+							vehicle = LXII_MEDIC_SA;
+							rank = "PRIVATE";
+						};
+						class Unit3 {
+							side = 1;
+							scope = 0;
+							position[] = {0,-9,0};
+							vehicle = LXII_RIFLEMAN_SA;
+							rank = "PRIVATE";
+						};
 					};
 				};
 			};
