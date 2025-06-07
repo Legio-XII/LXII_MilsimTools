@@ -8,7 +8,15 @@ class CfgPatches {
 		version = 1.0;
 		versionAr[] = {1,0,0,0};
 		versionStr = "v1.0.0";
-		requiredAddons[] = {"A3_Modules_F","cba_settings","ace_arsenal","3DEN"};
+		requiredAddons[] = {
+			"3DEN",
+			"cba_settings",
+			"ace_common",
+			"ace_arsenal",
+			"ace_explosives",
+			"ace_medical",
+			"A3_Modules_F"
+		};
 		units[] = {};
 		weapons[] = {};
 		magazines[] = {};
@@ -82,7 +90,7 @@ class Extended_PostInit_EventHandlers {
 #include "Configs\CfgEdenModules.hpp"
 #include "Configs\CfgEdenTools.hpp"
 #include "Configs\CfgEnableDebug.hpp"
-#include "Configs\CfgLadderTweak.hpp"
+// #include "Configs\CfgLadderTweak.hpp"
 #include "Configs\CfgMedicalEquipment.hpp"
 #include "Configs\CfgUnitTrainerTools.hpp"
 #include "Configs\CfgVehicleDeploy.hpp"

@@ -40,21 +40,6 @@ License GPL-2.0
 	["ZEN not loaded in time!", "legioArsenal\XEH_preInit.sqf"] call LXII_legioArsenal_fnc_log;
 }] call CBA_fnc_waitUntilAndExecute;
 
-
-[{isClass (configFile >> "CfgPatches" >> "klpq_musicRadio") && isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
-	["Legio XII Modules", "Add Music Radio",
-	{
-		// Array of position AGLS, ObjNull or the object under the module as it's placed
-		params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-		[_position, _objectUnderCursor] call LXII_legioArsenal_fnc_addMusicRadio;
-	}] call zen_custom_modules_fnc_register;
-
-	["KLPQ Music Player loaded successfully", "legioArsenal\XEH_preInit.sqf"] call LXII_legioArsenal_fnc_log;
-}, [], 120, {
-	["KLPQ Music Player not loaded in time!", "legioArsenal\XEH_preInit.sqf"] call LXII_legioArsenal_fnc_log;
-}] call CBA_fnc_waitUntilAndExecute;
-
 // Export the mission setting into the CBA Setting on mission start
 if (
 	isServer
