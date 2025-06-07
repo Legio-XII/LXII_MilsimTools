@@ -30,6 +30,10 @@ if (_objects isEqualType objNull) then {
 // Show Filter Dialog
 private _availableFilters = [
 	"",
+	"woodland",
+	"desert",
+	"winter",
+	"solar_auxilia",
 	"kasrkin",
 	"scion",
 	"mission"
@@ -37,9 +41,13 @@ private _availableFilters = [
 
 private _availableFilterNames = [
 	["Full", "Unlimited Arsenal!"],
+	["Woodland", "Woodland Guardsmen Equipment"],
+	["Desert", "Desert Guardsmen Equipment"],
+	["Winter", "Winter Guardsmen Equipment"],
+	["Solar Auxilia", "Solar Auxilia Equipment"],
 	["Kasrkin", "All Legio XII equipment"],
 	["Scion", "Scion Equipment Legio XII"],
-	"Mission"
+	["Mission", "Mission Specific Equipment"]
 ];
 
 private _arsenalObjects = [LXII_legioArsenal_arsenal_objects, true] call LXII_legioArsenal_fnc_strToArray;

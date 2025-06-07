@@ -4,7 +4,7 @@ param(
 
 $projectRoot    = Split-Path -Parent $PSScriptRoot
 $toolsPath      = "$projectRoot\tools"
-$buildPath      = "$projectRoot\.build\@LXII - Essentials"
+$buildPath      = "$projectRoot\.build\@LXII - Tools"
 $cachePath      = "$projectRoot\.build\cache"
 $modPrefix      = "VS_C_"
 $downloadUrl    = "https://github.com/KoffeinFlummi/armake/releases/download/v0.6.3/armake_v0.6.3.zip"

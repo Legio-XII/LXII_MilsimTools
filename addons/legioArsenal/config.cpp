@@ -15,7 +15,8 @@ class CfgPatches {
 			"ace_arsenal",
 			"ace_explosives",
 			"ace_medical",
-			"A3_Modules_F"
+			"A3_Modules_F",
+			"BNB_FA_LXII"
 		};
 		units[] = {};
 		weapons[] = {};
@@ -40,7 +41,7 @@ class CfgFunctions {
 			class isCurator {};
 			class listDeadPlayers {};
 			class notifyZeus {};
-			class setDefaultLoadouts {};
+			// class setDefaultLoadouts {}; // in LXII - Factions
 			class openTimerUI {};
 			class setRespawnTimer {};
 			class getArsenalFilter {};
@@ -53,7 +54,7 @@ class CfgFunctions {
 			file = "\x\LXII\legioArsenal\functions\zeus_modules";
 			class addBarracks {};
 			class forceRespawn {};
-			class addMusicRadio {};
+			// class addMusicRadio {};
 		};
 
 		class eden_modules {

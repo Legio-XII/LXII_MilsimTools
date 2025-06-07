@@ -1,6 +1,6 @@
-name = "Legio XII - Essentials";
+name = "LXII - Tools";
 picture = "legio.paa";
-hidePicture = "true";
+hidePicture = "false";
 hideName = "false";
 actionName = "Discord";
 action = "https://discord.me/legioxii";

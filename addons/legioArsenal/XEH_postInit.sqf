@@ -8,17 +8,18 @@ License GPL-2.0
 		!(isNil "cba_settings_ready")
 	};
 
-	if (isServer) then {
-		_loadoutUnits = allUnits select {_x getVariable ["LXII_legioArsenal_isLoadout", false]};
-		LXII_legioArsenal_loadouts = [];
-		{
-			_role = _x getVariable "LXII_legioArsenal_loadout_role";
-			LXII_legioArsenal_loadouts pushBack [_role, getUnitLoadout _x];
-			deleteVehicle _x;
-		} forEach _loadoutUnits;
-		publicVariable "LXII_legioArsenal_loadouts";
-		[LXII_legioArsenal_loadouts] remoteExec ["LXII_legioArsenal_fnc_setDefaultLoadouts", 0, true];
-	};
+///// Commenting out due to Default Loadouts in LXII - Factions mod
+	// if (isServer) then {
+	// 	_loadoutUnits = allUnits select {_x getVariable ["LXII_legioArsenal_isLoadout", false]};
+	// 	LXII_legioArsenal_loadouts = [];
+	// 	{
+	// 		_role = _x getVariable "LXII_legioArsenal_loadout_role";
+	// 		LXII_legioArsenal_loadouts pushBack [_role, getUnitLoadout _x];
+	// 		deleteVehicle _x;
+	// 	} forEach _loadoutUnits;
+	// 	publicVariable "LXII_legioArsenal_loadouts";
+	// 	[LXII_legioArsenal_loadouts] remoteExec ["LXII_legioArsenal_fnc_setDefaultLoadouts", 0, true];
+	// };
 };
 
 [{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{

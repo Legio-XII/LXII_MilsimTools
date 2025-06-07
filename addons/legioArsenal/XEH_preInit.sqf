@@ -35,9 +35,57 @@ private _LXII_legioArsenal_settings = [
 		[0, 1, 0.20, 2]
 	],
 	[
-		"LXII_legioArsenal_arsenal_whitelist_mission",
+        "LXII_legioArsenal_arsenal_whitelist_woodland",
+        "EDITBOX",
+        ["Woodland", "Default equipment whitelist"],
+        ["Legio XII Arsenal", "Arsenal Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+	[
+        "LXII_legioArsenal_arsenal_whitelist_desert",
+        "EDITBOX",
+        ["Desert", "Default equipment whitelist"],
+        ["Legio XII Arsenal", "Arsenal Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+	[
+        "LXII_legioArsenal_arsenal_whitelist_winter",
+        "EDITBOX",
+        ["Winter", "Default equipment whitelist"],
+        ["Legio XII Arsenal", "Arsenal Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+	[
+        "LXII_legioArsenal_arsenal_whitelist_winter",
+        "EDITBOX",
+        ["Winter", "Default equipment whitelist"],
+        ["Legio XII Arsenal", "Arsenal Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+	[
+		"LXII_legioArsenal_arsenal_whitelist_solar_aux",
 		"EDITBOX",
-		["Mission", "Mission specific equipment whitelist"],
+		["Solar Auxilia", "Mission specific equipment whitelist"],
 		["Legio XII Arsenal", "Arsenal Whitelists"],
 		"[]",
 		1,
@@ -58,7 +106,7 @@ private _LXII_legioArsenal_settings = [
         },
         true
     ],
-		[
+	[
         "LXII_legioArsenal_arsenal_whitelist_scion",
         "EDITBOX",
         ["Scion", "Default equipment whitelist"],

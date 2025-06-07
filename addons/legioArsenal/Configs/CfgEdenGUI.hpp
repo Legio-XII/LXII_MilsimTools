@@ -35,7 +35,7 @@ class LXII_legioArsenal_edenGUI {
 			w = 0.225;
 			h = 0.06;
 			colorBackground[] = {0.5,0.5,0.5,0.6};
-			tooltip = "Callsign of sections. Default: Raider";
+			tooltip = "Callsign of sections. Default: Cohort";
 			sizeEx = 1.1 * GUI_GRID_H;
 			canModify = 1;
 		};
@@ -55,7 +55,7 @@ class LXII_legioArsenal_edenGUI {
 			w = 0.225;
 			h = 0.06;
 			colorBackground[] = {0.5,0.5,0.5,0.6};
-			tooltip = "Callsign for zeus. Default: Monarch";
+			tooltip = "Callsign for zeus. Default: Centurion";
 			sizeEx = 1.1 * GUI_GRID_H;
 			canModify = 1;
 		};
@@ -81,39 +81,43 @@ class LXII_legioArsenal_edenGUI {
 			sizeEx = 1.1 * GUI_GRID_H;
 
 			class Items {
-				class MTP {
-					text = "MTP";
-					data = "MTP";
+				class Woodland {
+					text = "Woodland";
+					data = "WOODLAND";
 				};
 				class Desert {
 					text = "Desert";
-					data = "Desert";
+					data = "DESERT";
 				};
-				class Woodland {
-					text = "Woodland";
-					data = "Woodland";
+				class Winter {
+					text = "Winter";
+					data = "WINTER";
+				};
+				class Solar_Aux {
+					text = "Solar Auxilia";
+					data = "SOLAR_AUX";
 				};
 			};
 		};
 
-		class LXII_legioArsenal_spawnDefaultsText: RscText {
-			idc = 1023;
-			text = "Create Defaults?";
-			x = 0.4;
-			y = 0.28;
-			w = 0.225;
-			h = 0.06;
-			sizeEx = 1.2  * GUI_GRID_H;
-		};
+		// class LXII_legioArsenal_spawnDefaultsText: RscText {
+		// 	idc = 1023;
+		// 	text = "Create Defaults?";
+		// 	x = 0.4;
+		// 	y = 0.28;
+		// 	w = 0.225;
+		// 	h = 0.06;
+		// 	sizeEx = 1.2  * GUI_GRID_H;
+		// };
 
-		class LXII_legioArsenal_spawnDefaultsCheckbox: RscCheckbox {
-			idc = 1903;
-			x = 0.4;
-			y = 0.34;
-			w = 0.05;
-			h = 0.05;
-			sizeEx = 1.2  * GUI_GRID_H;
-		};
+		// class LXII_legioArsenal_spawnDefaultsCheckbox: RscCheckbox {
+		// 	idc = 1903;
+		// 	x = 0.4;
+		// 	y = 0.34;
+		// 	w = 0.05;
+		// 	h = 0.05;
+		// 	sizeEx = 1.2  * GUI_GRID_H;
+		// };
 
 		class LXII_legioArsenal_sectionAmountSlider: RscXSliderH {
 			idc = 1900;
