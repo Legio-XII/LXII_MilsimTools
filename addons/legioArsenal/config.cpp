@@ -29,7 +29,7 @@ class CfgFunctions {
 	class LXII_legioArsenal {
 		class common {
 			file = "\x\LXII\legioArsenal\functions\common";
-			class addDeployActions {};
+			// class addDeployActions {};
 			class addFullHeal {};
 			class addSpectator {};
 			class changeSpeakVolume {};
@@ -37,7 +37,7 @@ class CfgFunctions {
 			class edenCreateAssets {};
 			class getCurators {};
 			class getDeadPlayers {};
-			class getDeployAnimations {};
+			// class getDeployAnimations {};
 			class isCurator {};
 			class listDeadPlayers {};
 			class notifyZeus {};
@@ -94,6 +94,6 @@ class Extended_PostInit_EventHandlers {
 // #include "Configs\CfgLadderTweak.hpp"
 #include "Configs\CfgMedicalEquipment.hpp"
 #include "Configs\CfgUnitTrainerTools.hpp"
-#include "Configs\CfgVehicleDeploy.hpp"
+// #include "Configs\CfgVehicleDeploy.hpp"
 #include "Configs\CfgZenMenu.hpp"
 #include "Configs\CfgZeusActions.hpp"

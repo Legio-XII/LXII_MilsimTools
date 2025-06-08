@@ -104,12 +104,12 @@ _entities =
 _sections =
 [
     [
-        [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "LXII_legioArsenal_tools" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
+        [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
         "Command",
         ["description", format ["1: 1IC@%1 1-Actual", _callsign ]]
     ],
     [
-        [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "LXII_legioArsenal_tools" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
+        [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
         "Zeus",
         ["description", format ["1: Zeus@%1", _zeusCallsign]]
     ]
@@ -118,7 +118,7 @@ _sections =
 // The main sections
 _num = 0;
 for "_i" from 1 to _numberOfSections do {
-    create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "LXII_legioArsenal_tools" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
+    create3DENComposition [configfile >> "CfgGroups" >> "West" >> "LXII_legioArsenal_hidden_faction" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
 	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
 	_ix = 3;
