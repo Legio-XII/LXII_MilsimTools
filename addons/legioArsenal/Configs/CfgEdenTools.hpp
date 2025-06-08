@@ -48,9 +48,8 @@ class display3DEN
 // Create a completely hidden faction for these groups
 class CfgFactionClasses {
 	class LXII_legioArsenal_hidden_faction {
-		displayName = "LXII Hidden";
-		scope = 0;  // Completely hidden faction
-		scopeCurator = 0; // Not visible in curator
+		displayName = "";
+		scope = 1;  // Completely hidden faction
 		priority = 0;
 		side = 1;
 	};
@@ -60,20 +59,14 @@ class CfgGroups
 {
 	class West {
 		class LXII_legioArsenal_hidden_faction {
-			name = "LXII Hidden Faction";
-			scope = 0;
-			scopeCurator = 0; // Not visible in curator
-			class LXII_legioArsenal_tools {
-				name = "LXII - Eden/Tool Use";
-				scope = 0;
-				scopeCurator = 0; // Not visible in curator
+			name = "LXII (3DEN Script Use)";
+			scope = 1;
 				class infantry {
 					name = "Infantry";
-					scope = 0;
-					scopeCurator = 0; // Not visible in curator
+					scope = 1;
 					class LXII_zeus_WDLD {
 						name = "Zeus Woodland";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
@@ -92,62 +85,62 @@ class CfgGroups
 					};
 					class LXII_section_WDLD {
 						name = "Section Woodland";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_TEAMLEADER_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-3,0};
 							vehicle = LXII_ASTEAMLEADER_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit2 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-6,0};
 							vehicle = LXII_MEDIC_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit3 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-9,0};
 							vehicle = LXII_RIFLEMAN_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit4 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,0,0};
 							vehicle = LXII_RIFLEMAN_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit5 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-3,0};
 							vehicle = LXII_RIFLEMAN_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit6 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-6,0};
 							vehicle = LXII_RIFLEMAN_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit7 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-9,0};
 							vehicle = LXII_RIFLEMAN_WDLD;
 							rank = "PRIVATE";
@@ -156,34 +149,34 @@ class CfgGroups
 					};
 					class LXII_command_WDLD {
 						name = "Command Section Woodland";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_TEAMLEADER_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-3,0};
 							vehicle = LXII_ASTEAMLEADER_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit2{
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-6,0};
 							vehicle = LXII_MEDIC_WDLD;
 							rank = "PRIVATE";
 						};
 						class Unit3 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-9,0};
 							vehicle = LXII_RIFLEMAN_WDLD;
 							rank = "PRIVATE";
@@ -191,20 +184,20 @@ class CfgGroups
 					};
 					class LXII_zeus_DSRT {
 						name = "Zeus Desert";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_ASTEAMLEADER_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,0,0};
 							vehicle = LXII_ASTEAMLEADER_DSRT;
 							rank = "PRIVATE";
@@ -212,62 +205,62 @@ class CfgGroups
 					};
 					class LXII_section_DSRT {
 						name = "Section Desert";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_TEAMLEADER_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-3,0};
 							vehicle = LXII_ASTEAMLEADER_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit2 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-6,0};
 							vehicle = LXII_MEDIC_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit3 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-9,0};
 							vehicle = LXII_RIFLEMAN_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit4 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,0,0};
 							vehicle = LXII_RIFLEMAN_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit5 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-3,0};
 							vehicle = LXII_RIFLEMAN_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit6 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-6,0};
 							vehicle = LXII_RIFLEMAN_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit7 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-9,0};
 							vehicle = LXII_RIFLEMAN_DSRT;
 							rank = "PRIVATE";
@@ -275,34 +268,34 @@ class CfgGroups
 					};
 					class LXII_command_DSRT {
 						name = "Command Section Desert";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_TEAMLEADER_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-3,0};
 							vehicle = LXII_ASTEAMLEADER_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit2{
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-6,0};
 							vehicle = LXII_MEDIC_DSRT;
 							rank = "PRIVATE";
 						};
 						class Unit3 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-9,0};
 							vehicle = LXII_RIFLEMAN_DSRT;
 							rank = "PRIVATE";
@@ -310,20 +303,20 @@ class CfgGroups
 					};
 					class LXII_zeus_WNTR {
 						name = "Zeus Winter";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_ASTEAMLEADER_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,0,0};
 							vehicle = LXII_ASTEAMLEADER_WNTR;
 							rank = "PRIVATE";
@@ -331,62 +324,62 @@ class CfgGroups
 					};
 					class LXII_section_WNTR {
 						name = "Section Winter";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_TEAMLEADER_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-3,0};
 							vehicle = LXII_ASTEAMLEADER_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit2 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-6,0};
 							vehicle = LXII_MEDIC_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit3 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-9,0};
 							vehicle = LXII_RIFLEMAN_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit4 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,0,0};
 							vehicle = LXII_RIFLEMAN_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit5 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-3,0};
 							vehicle = LXII_RIFLEMAN_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit6 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-6,0};
 							vehicle = LXII_RIFLEMAN_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit7 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-9,0};
 							vehicle = LXII_RIFLEMAN_WNTR;
 							rank = "PRIVATE";
@@ -394,34 +387,34 @@ class CfgGroups
 					};
 					class LXII_command_WNTR {
 						name = "Command Section Winter";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_TEAMLEADER_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-3,0};
 							vehicle = LXII_ASTEAMLEADER_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit2 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-6,0};
 							vehicle = LXII_MEDIC_WNTR;
 							rank = "PRIVATE";
 						};
 						class Unit3 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-9,0};
 							vehicle = LXII_RIFLEMAN_WNTR;
 							rank = "PRIVATE";
@@ -429,62 +422,62 @@ class CfgGroups
 					};
 					class LXII_section_SA {
 						name = "Section Solar Auxilia";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_TEAMLEADER_SA;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-3,0};
 							vehicle = LXII_ASTEAMLEADER_SA;
 							rank = "PRIVATE";
 						};
 						class Unit2 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-6,0};
 							vehicle = LXII_MEDIC_SA;
 							rank = "PRIVATE";
 						};
 						class Unit3 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-9,0};
 							vehicle = LXII_RIFLEMAN_SA;
 							rank = "PRIVATE";
 						};
 						class Unit4 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,0,0};
 							vehicle = LXII_RIFLEMAN_SA;
 							rank = "PRIVATE";
 						};
 						class Unit5 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-3,0};
 							vehicle = LXII_RIFLEMAN_SA;
 							rank = "PRIVATE";
 						};
 						class Unit6 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-6,0};
 							vehicle = LXII_RIFLEMAN_SA;
 							rank = "PRIVATE";
 						};
 						class Unit7 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {1,-9,0};
 							vehicle = LXII_RIFLEMAN_SA;
 							rank = "PRIVATE";
@@ -492,41 +485,40 @@ class CfgGroups
 					};
 					class LXII_command_SA {
 						name = "Command Section Solar Auxilia";
-						scope = 0;
+						scope = 1;
 						faction = "LXII_legioArsenal_hidden_faction";
 						side = 1;
 						position[] = {0,0,0};
 						class Unit0 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,0,0};
 							vehicle = LXII_TEAMLEADER_SA;
 							rank = "PRIVATE";
 						};
 						class Unit1 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-3,0};
 							vehicle = LXII_ASTEAMLEADER_SA;
 							rank = "PRIVATE";
 						};
 						class Unit2 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-6,0};
 							vehicle = LXII_MEDIC_SA;
 							rank = "PRIVATE";
 						};
 						class Unit3 {
 							side = 1;
-							scope = 0;
+							scope = 1;
 							position[] = {0,-9,0};
 							vehicle = LXII_RIFLEMAN_SA;
 							rank = "PRIVATE";
 						};
 					};
 				};
-			};
 		};
 	};
 };
