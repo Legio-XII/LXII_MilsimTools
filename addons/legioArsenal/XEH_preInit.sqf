@@ -71,18 +71,6 @@ private _LXII_legioArsenal_settings = [
         true
     ],
 	[
-        "LXII_legioArsenal_arsenal_whitelist_winter",
-        "EDITBOX",
-        ["Winter", "Default equipment whitelist"],
-        ["Legio XII Arsenal", "Arsenal Whitelists"],
-        "[]",
-        1,
-        {
-            // One day this will re-init all arsenals that have this filter set
-        },
-        true
-    ],
-	[
 		"LXII_legioArsenal_arsenal_whitelist_solar_aux",
 		"EDITBOX",
 		["Solar Auxilia", "Mission specific equipment whitelist"],
@@ -110,6 +98,18 @@ private _LXII_legioArsenal_settings = [
         "LXII_legioArsenal_arsenal_whitelist_scion",
         "EDITBOX",
         ["Scion", "Default equipment whitelist"],
+        ["Legio XII Arsenal", "Arsenal Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+    [
+        "LXII_legioArsenal_arsenal_whitelist_mission",
+        "EDITBOX",
+        ["Mission", "Default equipment whitelist"],
         ["Legio XII Arsenal", "Arsenal Whitelists"],
         "[]",
         1,
